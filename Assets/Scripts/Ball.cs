@@ -36,7 +36,8 @@ public class Ball : MonoBehaviour
 			Touch NewTouch = Input.GetTouch(0);
 			if (NewTouch.phase == TouchPhase.Moved)
 			{
-				transform.position = new Vector3(Mathf.Clamp(transform.position.x + (NewTouch.deltaPosition.x * MovingSpeed * Time.deltaTime), MinX, MaxX), transform.position.y, transform.position.z);
+				//transform.position = new Vector3(Mathf.Clamp(transform.position.x + (NewTouch.deltaPosition.x * MovingSpeed * Time.deltaTime), MinX, MaxX), transform.position.y, transform.position.z);
+				transform.position = new Vector3(Mathf.Clamp(transform.position.x + (NewTouch.deltaPosition.x * MovingSpeed), MinX, MaxX), transform.position.y, transform.position.z);
 			}
 		}
 	}
